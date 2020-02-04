@@ -16,7 +16,7 @@ const calculator = {
     }
     
 }
-console.log(calculator.plus(5, 5))
+const plus = calculator.plus(5, 5)
 const multiplication = calculator.multiplication(5, 5)
 const division = calculator.division(5, 5)
 const minus = calculator.minus(5, 5)
