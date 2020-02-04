@@ -1,4 +1,4 @@
-const calculator = {
+/*const calculator = {
     plus: function(a, b){
       return a + b;
     },
@@ -25,3 +25,15 @@ const power = calculator.power(5, 5)
   
   console.log(plus, multiplication, division, minus, power);
   
+  const title = document.querySelector("#title");
+  title.innerHTML = "Hi! From JS";
+  title.style.color = "red";
+  document.title = 'i own you now'
+  */
+ const title = document.querySelector("#title");
+ 
+ function handleResize(){
+   console.log("I have been resized")
+ }
+
+ window.addEventListener("resize", handleResize)
