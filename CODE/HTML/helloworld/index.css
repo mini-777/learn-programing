@@ -7,3 +7,11 @@ body{
 h1 {
     color: rgb(85, 85, 85);
 }
+
+.form,
+.greetings{
+    display: none;
+}
+.showing {
+    display: block;
+}
