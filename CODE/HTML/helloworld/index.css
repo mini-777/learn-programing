@@ -5,17 +5,24 @@ body{
 }
 
 h1 {
-    color: rgb(85, 85, 85);
+    color: #ecf0f1;
 }
 
 .form,
 .greetings{
+    color: #ecf0f1;
     display: none;
 }
 .showing {
     display: block;
+    color: #ecf0f1;
 }
-
+.js-toDoList{
+    color: #ced6e0;
+}
+.js-weather{
+    color: #ced6e0;
+}
 @keyframes fadeIn {
     0% {
         opacity:0;
