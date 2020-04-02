@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "CodeLens (Launch) - HelloJava",
+            "request": "launch",
+            "mainClass": "HelloJava",
+            "projectName": "learn-programing_30645563"
+        },
+        {
             "type": "node",
             "request": "launch",
             "name": "프로그램 시작",
