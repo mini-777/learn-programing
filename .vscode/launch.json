@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - variablePrint",
+            "request": "launch",
+            "mainClass": "variablePrint",
+            "projectName": "learn-programing_30645563"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Student",
+            "request": "launch",
+            "mainClass": "Student",
+            "projectName": "learn-programing_30645563"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - HelloJava",
             "request": "launch",
             "mainClass": "HelloJava",

@@ -1,11 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
-import sys
 from PyQt5.QtWidgets import *
+import sys
 from PyQt5 import uic
-import time
-form_class = uic.loadUiType("untitled.ui")[0]
 
 
 class WindowClass(QMainWindow, form_class) :
