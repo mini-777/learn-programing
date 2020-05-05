@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form>
+    <h2>피자 주문하기</h2>
+    <hr class="one">
+    <label>고객명 : <input type="text" placeholder="필수 입력사항"></label>
+    <label><br>이메일 : <input type="text" placeholder="필수 입력사항"></label>
+    <label><br>전화번호 : <input type="text" placeholder="하이픈없이입력"></label>
+    <br><br>
+    
+    <fieldset>
+        <legend>피자사이즈</legend>
+
+            <input type="radio" name="pizzasize" value="Small"/>Small
+            <input type="radio" name="pizzasize" value="Medium"/>Medium
+            <input type="radio" name="pizzasize" value="Large"/>Large
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>토핑선택</legend>
+ 
+            <input type="checkbox" name="topping" value="베이컨"/>베이컨
+            <input type="checkbox" name="topping" value="치즈"/>치즈
+            <input type="checkbox" name="topping" value="양파"/>양파
+            <input type="checkbox" name="topping" value="버섯"/>버섯
+
+    </fieldset>
+    <br>
+    배송요청사항:<textarea name="MSG" rows="5" cols="25"></textarea><br><br>
+    <input type="submit" value="주문하기">
+</form>
+</body>
+</html>

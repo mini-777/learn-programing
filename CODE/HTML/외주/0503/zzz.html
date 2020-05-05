@@ -4,9 +4,31 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
   <meta charset="utf-8">
   <title>Seobin's homepage</title>
+
+
   <style type="text/css">
+  
     li{list-style: none;}
     a{text-decoration: none;}
+    #adsideWrapper {
+      position: absolute;
+    }
+    .sidenav {
+      width: 130px;
+      z-index: 1;
+      top: 100px;
+      left: 10px;
+      float: left;
+      background: #eee;
+      overflow-x: hidden;
+      padding: 8px 0;
+    }
+
+
+
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+    }
 
     *{
       font-family: '맑은 고딕','Malgun Gothic',Gothic,sans-serif;
@@ -58,9 +80,9 @@
   </article>
   <article>
       <div class="w3-content w3-display-container">
-  <img class="mySlides" src="01.jpg">
-  <img class="mySlides" src="02.jpg">
-  <img class="mySlides" src="03.jpg">
+  <img class="mySlides" src="01.jpg" width="300px" height="auto">
+  <img class="mySlides" src="02.jpg" width="300px" height="auto">
+  <img class="mySlides" src="03.jpg" width="300px" height="auto">
   <div class="w3-center w3-display-bottommiddle" style="width:100%">
     <div class="w3-left" onclick="plusDivs(-1)">&#10094;</div>
     <div class="w3-right" onclick="plusDivs(1)">&#10095;</div>
@@ -73,17 +95,17 @@
     <div class="w3-text-green">
       <h3>나의 취미생활</h3>
   </div>
-  <article>
-  <article id="hobby">
-<div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:130px">
-  <h5 class="w3-bar-item">Hobby</h5>
-  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'London')">Movie</button>
-  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Paris')">Music</button>
-  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Tokyo')">Shopping</button>
-</div>
-  </article>
+  
+<article>
+  <div class="sidenav">
+    <h5 class="w3-bar-item">&nbsp;&nbsp;&nbsp;Hobby</h5>
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'London')">Movie</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Paris')">Music</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Tokyo')">Shopping</button>
+  </div>
+
 <div style="margin-left:130px">
-  <div class="w3-padding">저의 취미는 영화감상, 음악감상, 쇼핑몰 둘러보기가 있습니다.</div>
+  <div class="w3-padding" style="display:inline-block">저의 취미는 영화감상, 음악감상, 쇼핑몰 둘러보기가 있습니다.</div>
 
   <div id="London" class="w3-container city" style="display:none">
     <h2>Movie</h2>
@@ -93,7 +115,7 @@
   <li>액션/SF/스릴러  : 엑시트, 청년경찰, 도어락, 7년의 밤, 마블 시리즈</li>
   <li>가족/드라마     : 지금 만나러 갑니다, 백두산, 시동, 82년생 김지영</li>
 </ul>
-  </div>
+</div>
 
   <div id="Paris" class="w3-container city" style="display:none">
    <h2>Music</h2>
@@ -135,8 +157,8 @@ function openCity(evt, cityName) {
 }
 </script>
 </article>
-  <div class="w3-text-green">
-      <h3>나의 SNS</h3>
+  <div class="w3-text-green" >
+      <br><br><br><br><br><br><h3>나의 SNS</h3>
   </div>
   <article id="sns">
     <ul>
