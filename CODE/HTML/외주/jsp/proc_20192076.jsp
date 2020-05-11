@@ -11,19 +11,19 @@
         request.setCharacterEncoding("UTF-8");
         String id = request.getParameter("id");
         String pw = request.getParameter("pw");
-        String age = request.getParameter("age");
-
     %>
-    <%
-        if(id.equals("abcd") && pw.equals("z1234")) {
-    %>
-    <script>alert('로그인에 성공하셨습니다.');</script>
-    <% 
-        }else{ %>
-    <script>alert('로그인에 실패하였습니다.');</script>
-       <% }
     
-     %>
+    <script>
+        var
+        if(<% id %> == "abcd"){
+        alert('로그인에 성공하셨습니다.');
+        location.href="form_20192076.jsp"
 
+        }else{
+        alert('로그인에 실패하였습니다.');
+            location.href="form_20192076.jsp"
+        }
+    </script>
+       
 </body>
 </html>
