@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>피보나치 수열</title>
+
+<style>
+   .box1 {
+      border-radius: 10px;
+      border: 2px solid #73AD21;
+      background-color : #73AD21;
+      padding: 10px; 
+      margin : 10px;
+      width: 400px;
+      height: 20px; 
+      color : white;
+      text-align : center;
+   }
+   .box2 {       
+      padding: 10px; 
+      margin : 10px;
+      width: 400px; 
+      text-align : center;
+   } 
+   #msg {
+      margin : 10px;
+      padding: 10px;
+      font-size : 14px;
+      color : red;
+      text-align : left;
+   }
+   #msg2 {
+      margin : 10px;
+      padding: 10px;
+      font-size : 14px;
+      color : blue;
+      text-align : left;
+   }
+   #msgimg {
+      width : 400px; 
+      margin : 10px;
+      padding: 10px;  
+      border: 1px solid #73AD21;
+      text-align : center;
+   }
+   .b1 {
+      width : 100px;
+      height :100px;
+      font-size : 30px;
+      text-align : center;
+   }
+
+   
+   .card1 {
+      width : 50px;
+      height :60px;
+      border: 2px solid #73AD21;
+      border-radius: 5px;
+      margin: 5px;
+      padding-top:6px;
+      font-size: 25px;
+      float: left;
+   }
+   
+   .card2 {
+      width : 50px;
+      height :60px;
+      background-color: yellow;
+      border: 2px solid #73AD21;
+      border-radius: 5px;
+      margin: 5px;
+      padding-top:6px;
+      font-size: 25px;
+      float: left;
+   }
+
+   
+   .cardClear {
+      clear : both;
+   }
+</style>
+<script>
+   var str1 ; // fib_recursive 의 피보나치 수열 계산 과정 출력을 위한 변수
+   var str2 ; // fib_loop의 피보나치 수열 계산 과정 출력을 위한 변수
+   var arrNumber = new Array();
+
+   
+   /*
+      recursive funciton을 통해 fibonacci 수열을 계산
+      피보나치 수열의 각 항이 계산될 때 마다 몇번째 항이 계산되었는지를
+      str1 변수에 concatenate 시켜야 함. (출력 결과는 과제 설명 자료 참조)
+      결과적으로 num 번째 피보나치 수열 항 값을 반환해야 함.
+   */
+   
+   function fib_recursive(num){
+
+        if (num < 2){
+            arrNumber.push(num);
+            return num;
+        }else{
+        arrNumber.push(num);
+        return fib_recursive(num - 1) + fib_recursive(num - 2);
+        }
+   }
+
+   /*
+      loop statement를 이용하여 fibonacci 수열을 계산
+      피보나치 수열의 각 항이 계산될 때 마다 몇번째 항이 계산되었는지를
+      str2 변수에 concatenate 시켜야 함. (출력 결과는 과제 설명 자료 참조)
+      결과적으로 num 번째 피보나치 수열 항 값을 반환해야 함.
+   */
+   var numArr =[0, 1]; 
+   function fib_loop(num){
+    
+    // 첫째와 둘째항 값을 박고 시작했다.
+
+    if (num <= 1) {
+        
+        return num
+        } //1 이하면 그대로 리턴하고 함수 종료
+    else {
+        for (var i=2; i <= num; i++) {
+          //첫째항과 둘째항은 이미 박혀있으니까 3번째항부터 루프
+        numArr[i] = numArr[i-2] + numArr[i-1]; //규칙 반영
+    }
+    }
+
+    return numArr[num]
+   }
+
+   function show(){
+    num=document.getElementById("fibo").value;
+      // TODO: input check : N을 입력하세요. 
+      // TODO: error 발생시 fucus 이동 시킬 것
+      if ( num == "") {
+         alert("N을 입력하세요.");
+         myform.txt1.focus();
+         return;
+      }
+
+      
+      if (0 > num || num > 10 ) {
+         alert("N은 (0 <= N <= 10)");
+         myform.txt1.focus();
+         return;
+      }
+      //TODO: input check : N은 (0 <= N <= 10)
+      //TODO: error 발생시 focus 이동 시킬 것
+
+      var res;
+      str1 = "recursive 방식: ";
+      
+      res = fib_recursive(num);
+      
+      
+      for(var i=0;i<arrNumber.length;i++){ //배열 출력
+        str1= str1+arrNumber[i]+" ";
+    }
+    str1 = str1 + ": "+res;
+      document.getElementById("msg").innerHTML = str1;
+
+      str2 = "loop 방식: ";
+      res = fib_loop(num);
+      for(var i=0;i<numArr.length;i++){ //배열 출력
+        str2= str2+i+" ";
+    }
+      str2 = str2 + ": " + res;
+      document.getElementById("msg2").innerHTML = str2;
+      arrNumber.length=0;
+
+   }
+   
+
+   function showClear(){
+      str1 = "recursive 방식: ";
+      str2 = "loop 방식: ";
+      document.getElementById("msg").innerHTML = str1 ;
+      document.getElementById("msg2").innerHTML = str2 ;
+      
+    
+      myform.reset();
+   }
+</script>
+</head>
+<body>
+<form name="myform">
+   <div class="box1">
+      피보나치 수열
+   </div>
+   <div class="box2">
+      N(입력) <input type="text" name="txt1" id="fibo" size="6">
+      <input type="button" value="수열생성" onclick="show()">
+      <input type="button" value="지우기" onclick="showClear()">
+   </div>     
+   <div id="msg">
+   </div>
+   <div id="msg2">
+   </div>
+</form>
+</body>
+</html>

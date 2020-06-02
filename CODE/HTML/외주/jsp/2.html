@@ -1,0 +1,25 @@
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Insert title here</title>
+<meta charset="utf-8">
+</head>
+<body>
+    <%
+        request.setCharacterEncoding("UTF-8");
+        String name = request.getParameter("name");
+        String number = request.getParameter("number");
+        String email = request.getParameter("mail");
+    %>
+    <h1>지원자 정보는 다음과 같습니다.</h1>
+    <span>이름 : <%=name%></span><br>
+    <span>연락처 : <%=number%></span><br>
+    <span>이메일 : <%=email%></span><br>
+    <span>지원분야 : <%=name%></span><br>
+    <span>지원동기 : <%=name%></span><br>
+    
+       
+</body>
+</html>

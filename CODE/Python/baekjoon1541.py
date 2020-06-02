@@ -1,3 +1,2 @@
-import re
-cal=list(input().split('+'))
-print(cal)
+for a in range(100000000):
+    print(a)

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESSData</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--제이쿼리 cdn을 import 해줍니다-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        setInterval(function graph(){ 
+            $.getJSON("http://snpg.iptime.org/current_ess", function(data){ // JSON 파일을 url 에서 가져옵니다
+                var po1 = document.getElementById("1"); // 각각의 리스트의 id값을 변수에 할당해줍니다
+                var po2 = document.getElementById("2");
+                var po3 = document.getElementById("3");
+                var po4 = document.getElementById("4");
+                var po5 = document.getElementById("5");
+                var po6 = document.getElementById("6");
+                var po7 = document.getElementById("7");
+                var po8 = document.getElementById("8");
+                var po9 = document.getElementById("9");
+                var power_1 = data.Solar_input_power_1; // 받은 JSON 파일에서 필요한 key 값의 value 를 변수에 저장해줍니다
+                var power_2 = data.Solar_input_power_2;
+                var capacity = data.Battery_capacity;
+                var ph1pow = data.ph1_power;
+                var ph2pow = data.ph2_power;
+                var ph3pow = data.ph3_power;
+                po1.innerHTML = power_1; // 변수에 저장한 value를 각각의 리스트들의 id 에 맞게 출력합니다
+                po2.innerHTML = power_2;
+                po3.innerHTML = capacity;
+                po4.innerHTML = ph1pow+"   ";
+                po5.innerHTML = ph2pow+"   ";
+                po6.innerHTML = ph3pow+"   ";
+                /*말씀해주신 비율 계산식 입니다*/
+                var sum = ph1pow+ph2pow+ph3pow;
+                let ph1per=(ph1pow/sum)*100;
+                let ph2per=(ph2pow/sum)*100;
+                let ph3per=(ph3pow/sum)*100;
+                po7.innerHTML = "("+parseInt(ph1per) + "%"+")";
+                po8.innerHTML = "("+parseInt(ph2per) + "%"+")";
+                po9.innerHTML = "("+parseInt(ph3per) + "%"+")";
+                
+                
+                new Chart(document.getElementById("bar-chart"), {
+                    type: 'bar',
+                    data: {
+                    labels: ["ph1", "ph2", "ph3"],
+                    datasets: [
+                        {
+                        label: "%",
+                        backgroundColor: ["#3e95cd", "#e8c3b9","#c45850"],
+                        data: [ph1per, ph2per, ph3per]
+                        }
+                    ]
+                    },
+                    options: {
+                        scales: {
+               yAxes: [{
+                   ticks: {
+                       // Include a dollar sign in the ticks
+                       callback: function(value, index, values) {
+                           return value+'%' ;
+                       }
+                   }
+               }]
+           },
+                    legend: { display: false },
+                    title: {
+                        display: true,
+                        text: 'power of ph1, ph2, ph3'
+                    }
+                    }
+                });
+            });
+
+        }, 2000); //2초동안 텀을 주고 반복
+
+        
+    </script>
+    <ol>
+        <li>Solar_power_1 : <span id="1"></span></li>
+        <br><li>Solar_power_2 : <span id="2"></span></li>
+        <br><li>Battery_capacity : <span id="3"></span></li>
+        <br><li>ph1_power : <span id="4"></span><span id="7"></span></li>
+        <br><li>ph2_power : <span id="5"></span><span id="8"></span></li>
+        <br><li>ph3_power : <span id="6"></span><span id="9"></span></li>
+    </ol>
+    <canvas id="bar-chart" width="500" height="250"></canvas>
+</body>
+</html>

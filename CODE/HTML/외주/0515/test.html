@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head><title>HTML5 문서 구조 시맨틱 태그 사용</title>
+<meta charset="utf8">
+<style>
+html, body { margin: 0; padding: 0; height: 80%; }
+.header { width: 100%; height: 15%; }
+.head {
+    height : 40px;
+    background-color: rgb(200, 225, 164);
+    text-align:right;
+    margin-top: 20px;
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+.section { width: 70%; height: 70%; float: left;
+    padding-left: 70px;
+ }
+		
+.aside { width: 15%; height: 70%; float: left; }
+.example {
+    width : 700px;
+    height : 150px;
+    background-color: rgb(228, 245, 253);
+    margin-top: 30px;
+    line-height: 35px;
+    
+}
+.jframe, .contentpan {
+    width : 250px;
+    height : 40px;
+    background-color: rgb(224, 231, 231);
+    border-radius: 10px;
+    margin-top: 260px;
+    line-height: 40px;
+    
+    
+}
+.p{
+    padding-left:150px;
+
+}
+.p1, .p2 {
+    padding-left: 10px;
+}
+.line {
+    padding-left: 20px;
+}
+</style>
+</head>
+<body>
+	<header class="header">
+        <div class="head">
+            <b><span>자바 GUI 기초</span> <span  class="p"></span>323&nbsp&nbsp&nbsp&nbsp&nbsp</span></b>
+        </div>  
+    </header>
+	<section class="section"><b>&nbsp&nbsp&nbspGUI 프로그램은 이미지나 도형을
+         다루는 클래스와 이벤트 처리를 위한 클래스를 사<br>용하기
+          때문에, 다음 import 문이 함께 필요한 경우가 많다.</b>
+        <div class="example">
+            <p class="line">
+                <span style="color:rgb(255, 138, 138)">import</span> java.awt.*; <span style="color:green">// 그래픽 처리를 위한 클래스들의 경로명</span><br>
+                <span style="color:rgb(255, 138, 138)">import</span> java.awt.event.*; <span style="color:green">// AWT 이벤트 사용을 위한 경로명</span><br>
+                <span style="color:rgb(255, 138, 138)">import</span> javax.swing.*;<span style="color:green"> // 스윙 컴포넌트 클래스들의 경로명</span><br>
+                <span style="color:rgb(255, 138, 138)">import</span> javax.swing.event.*;<span style="color:green"> // 스윙 이벤트를 위한 경로명</span></p>
+            </p>
+        </div>
+        <div>
+            <h1 style="color: rgb(133, 0, 0)">스윙 프레임과 컨텐트팬</h1>
+            <span>스윙 프레임은 모든 스윙 컴포넌트들을 담는 최상위 컨테이너(Top Level Container)
+                <br>이다. 프레임이 출력될 때, 프레임 내에 부착된 모든 컴포넌트들이 화면에 출력된다.
+                <br>컴포넌트들은 프레임 없이 독립적으로 화면에 출력될 수 없다. 프레임이 닫히면 프레
+                <br>임 내의 모든 컴포넌트들도 프레임과 함께 화면에서 사라진다.
+                <br>&nbsp&nbsp&nbsp&nbsp스윙에서 프레임의 역할을 하는 클래스가 <b><span style="color:green">JFrame</span></b>이다. JFrame 객체는 <b><span style="color:brown">[그림 8-2]</span></b>와
+                <br>같이 구성된다. <b>JFrame</b> 객체는 Frame<b>(java.awt.Frame)</b>, 메뉴바<b>(Menu Bar)</b>, 컨텐트
+                <br>팬<b>(content pane)</b>의 세 공간으로 구성된다. Frame은 AWT 패키지에 있는 클래스로서
+                <br>JFrame이 <b><span style="color:brown">[그림 8-2]</span></b>와 같이 <b>java.awt.Frame</b>을 상속받기 때문에 당연히 존재하며, 모든
+                <br>메뉴는 메뉴바에 부착된다.
+                <br>&nbsp&nbsp&nbsp&nbsp<b><span style="color:green">컨텐트팬</span></b>은 메뉴를 제외한 모든 <b>GUI</b> 컴포넌트들을 부착하는 공간이므로, 개발자는
+                <br>화면에 출력하고자 하는 <b>GUI</b> 컴포넌트들을 컨텐트팬에 붙여야 한다.
+                <br>&nbsp&nbsp&nbsp&nbsp<b><span style="color:brown">[그림 8-2]</span></b>의 왼쪽은 JFrame의 사용 예로서 5개의 메뉴가 메뉴바에 부착되어 있으며,
+                <br>컨텐트팬에는 add, sub, mul, div 이름의 버튼 컴포넌트들이 부착되어 있다.
+            </span>
+            <figure class="figure">
+                <img src="img.png" style="width: 800px;height: 400px;"alt="sug_img">
+            </figure>
+        </div>
+        </section>
+    <aside class="aside">
+        <div class="jframe">
+            <b class="p1">JFrame</b>
+        </div>
+        
+        <div class="contentpan">
+            <b class="p2">컨텐트팬</b>
+        </div>
+    </aside>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+    <form action ="2.html" method="post">
+
+        <h3><b>개인정보</b></h3>
+    
+            <label>이름 : <input type="text" name="name" placeholder="공백없이 입력하세요" style="width:100px" required></label>
+            <label><br>연락처 : <input type="text" name="number" placeholder="4~8자입력" style="width:100px" required></label>
+            <label><br>이메일 : <input type="email" name="mail" placeholder="xy@yy.com" style="width:100px" required></label>
+            
+        <h3><b>지원분야</b></h3>
+        <label><input type="radio" name="name" required>웹퍼블리싱</label>
+        
+        <label><input type="radio" name="name" required>웹사이트구축</label>
+        
+        <label><input type="radio" name="name" required>웹서비스</label>
+        <h3><b>지원동기</b></h3>
+        <br>배송요청사항:<textarea name="MSG" rows="3" cols="30"></textarea><br><br>
+        <br><input type="submit" value="접수하기"><input type="submit" value="다시쓰기">
+    </form>
+
+</body>
+</html>
