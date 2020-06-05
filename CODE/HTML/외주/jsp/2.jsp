@@ -10,16 +10,12 @@
     <%
         request.setCharacterEncoding("UTF-8");
         String name = request.getParameter("name");
-        String number = request.getParameter("number");
         String email = request.getParameter("mail");
     %>
-    <h1>지원자 정보는 다음과 같습니다.</h1>
-    <span>이름 : <%=name%></span><br>
-    <span>연락처 : <%=number%></span><br>
-    <span>이메일 : <%=email%></span><br>
-    <span>지원분야 : <%=name%></span><br>
-    <span>지원동기 : <%=name%></span><br>
-    
+    <script>
+        alert('이름 : ' + <%=name%>);
+        alert('이메일 : '+ <%=email%>)
+    </script>
        
 </body>
 </html>
