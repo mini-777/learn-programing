@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>CSS Navigation bar</title>
+	<style>
+		ul {
+			background-color: #FFDAB9;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+            text-align: center;
+		}
+		li {
+			display: inline-block;
+			font-size: 20px;
+			padding: 20px;
+			 }
+		li a {
+			display: block;
+			background-color: #ffac64;
+			color: #000000;
+			padding: 8px;
+			text-decoration: none;
+			text-align: center;
+			font-weight: bold;
+		}
+		li a.current {
+			background-color: #FF6347;
+			color: white;
+			text-align: center;
+		}
+		li a:hover:not(.current) {
+			background-color: #CD853F;
+			color: white;
+		}
+	</style>
+</head>
+
+<body bgcolor="#FFDAB9">
+
+	<h1 style="text-align: center;"><b>PROFILE</b></h1>
+	<ul>
+		<li><a href="main.html">Profile</a></li>
+		<li><a href="music.html">Music</a></li>
+		<li><a href="timetable.html">Timetable</a></li>
+	    <li><a href="travel.html">Travel</a></li>
+		<li><a href="favorite.html">Favorite</a></li>
+	</ul>
+
+    <h1 style="margin: 50px;">경주</h1>
+    <img src="img/k1.jpg" width="300" height="200">
+    <img src="img/k2.jpg" width="300" height="200">
+    <img src="img/k3.jpg" width="300" height="200">
+    <img src="img/k4.jpg" width="300" height="200">
+    <h1 style="margin: 50px;">제주</h1>
+    <img src="img/jeju.jpg" width="300" height="200">
+    <img src="img/jeju2.jpg" width="300" height="200">
+    <img src="img/jeju3.jpg" width="300" height="200">
+    <img src="img/jeju4.jpg" width="300" height="200">
+    <h1 style="margin: 50px;">서울</h1>
+    <img src="img/seoul.jpg" width="300" height="200">
+    <img src="img/seoul2.jpg" width="300" height="200">
+    <img src="img/seoul3.jpg" width="300" height="200">
+    <img src="img/seoul4.jpg" width="300" height="200">
+</body>
+
+</html>

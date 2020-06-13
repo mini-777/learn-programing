@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>CSS Navigation bar</title>
+	<style>
+		ul {
+			background-color: #FFDAB9;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+            text-align: center;
+		}
+		li {
+			display: inline-block;
+			font-size: 20px;
+			padding: 20px;
+			 }
+		li a {
+			display: block;
+			background-color: #ffac64;
+			color: #000000;
+			padding: 8px;
+			text-decoration: none;
+			text-align: center;
+			font-weight: bold;
+		}
+		li a.current {
+			background-color: #FF6347;
+			color: white;
+			text-align: center;
+		}
+		li a:hover:not(.current) {
+			background-color: #CD853F;
+			color: white;
+		}
+        table {
+            margin: auto;
+            width: 1000px;
+            height: 500px;
+        }
+	</style>
+</head>
+
+<body bgcolor="#FFDAB9">
+
+	<h1 style="text-align: center;"><b>PROFILE</b></h1>
+	<ul>
+		<li><a href="main.html">Profile</a></li>
+		<li><a href="music.html">Music</a></li>
+		<li><a href="timetable.html">Timetable</a></li>
+	    <li><a href="travel.html">Travel</a></li>
+		<li><a href="favorite.html">Favorite</a></li>
+	</ul>
+    <table border="1" bgcolor="white">
+        <thead>
+            <tr>
+                <th></th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+                <th>금</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1교시</td>
+                <td>품질경영</td>
+                <td></td>
+                <td>공학수학</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2교시</td>
+                <td rowspan="2">공학수학</td>
+                <td></td>
+                <td rowspan="2">품질경영</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3교시</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4교시</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>5교시</td>
+                <td>경제성공학</td>
+                <td>창의적공학설계</td>
+                <td rowspan="2">경제성공학</td>
+                <td>인터넷기술</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>6교시</td>
+                <td rowspan="2">산업통게1</td>
+                <td rowspan="2">인터넷기술응용</td>
+                <td rowspan="2">창의적공학설계</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>7교시</td>
+                <td>산업통계</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<DOCTYPE HTML> 
+    <html>
+    
+     <head>
+      
+       <style> 
+        div, img { 
+           margin: 20px 20px;
+           padding: 10px;       
+           width : 200px; height: 70px;   
+        } 
+        p { background: violet;     } 
+        div { background : purple; }       
+        span { background : yellow;    border: 5px solid red; 
+               padding: 20px;  margin: 150px 150px;         
+              width : 200px; height: 70px;   
+        } 
+        img { background : lightblue; } 
+        #parent { height: 100px; height: 50px; padding : 10px;  
+            background: red;   text-align: center;
+         } 
+        .child { display : inline-block ; 
+                width: 18%; height: 96%;    
+                background: blue ;    
+                margin:  0px auto;
+                
+        } 
+        ul  {  background: lightgray;  padding: 6px; } 
+        li  {  display: inline; padding: 15px 15px ; }   
+        a  {  color: black;  padding: 5px 10px;  text-decoration: none; }
+        a:hover  { background: steelblue; color: white; }
+        #b1 { background: aquamarine; }  
+    #b2 { background: beige; text-align: center; } 
+    #b3 { background: tomato; text-align: center;
+          line-height : 80px; 
+    }    
+    div  { width: 600px; 
+         margin: 0 auto; 
+         background: lightgray;
+  }
+       </style> 
+    
+     </head>
+    
+     <body>  
+        <ul> 
+            <li><a href="#home" class="m">Home</a></li>
+            <li><a href="#html" class="m">HTML5</a></li>
+            <li><a  class="m">CSS3</a></li>
+            <li><a href="#js" class="m">Javascript</a></li>
+          </ul>
+       <div id="b1">CSS3 스타일시트(기본출력)</div>
+        <div id="b2">CSS3 스타일시트(좌우 중앙정렬)</div>
+        <div id="b3">CSS3 스타일시트(박스내부 중앙출력)</div> 
+       <div id="parent" > 
+        <div class="child" > 메뉴항목 1 </div>
+        <div class="child" > 메뉴항목 2 </div> 
+        <div class="child" > 메뉴항목 3 </div>
+        <div class="child" > 메뉴항목 4</div>  
+    </div>
+        
+        <div> 
+            <h3>스포츠 분야별 상위 3팀 순위<br><br></h3>
+              <ul>
+                 <li>프로야구</li> 
+                 <ol>
+                    <li>두산 베이스</li> 
+                    <li>LG 트윈스</li>
+                    <li>롯데 자이언트</li>   
+                  </ol>      
+                 <li>프로축구</li>
+                 <ol>
+                    <li>전북현대</li> 
+                    <li>FC 서울</li>
+                    <li>인천 유나이티드</li>   
+                  </ol> 
+                 <li>프로농구</li>   
+                  <ol>
+                    <li>인천 전자랜드</li> 
+                    <li>전주 KCC</li>
+                    <li>서울 SK</li>  
+                  </ol> 
+              </ul>  
+            </div>
+               
+     </body>
+    
+    </html>

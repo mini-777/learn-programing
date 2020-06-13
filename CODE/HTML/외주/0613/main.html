@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>CSS Navigation bar</title>
+	<style>
+		ul {
+			background-color: #FFDAB9;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+            text-align: center;
+		}
+		li {
+			display: inline-block;
+			font-size: 20px;
+			padding: 20px;
+			 }
+		li a {
+			display: block;
+			background-color: #ffac64;
+			color: #000000;
+			padding: 8px;
+			text-decoration: none;
+			text-align: center;
+			font-weight: bold;
+		}
+		li a.current {
+			background-color: #FF6347;
+			color: white;
+			text-align: center;
+		}
+		li a:hover:not(.current) {
+			background-color: #CD853F;
+			color: white;
+		}
+        img {
+			margin: 120px;
+        }
+		
+	</style>
+</head>
+
+<body bgcolor="#FFDAB9">
+
+	<h1 style="text-align: center;"><b>PROFILE</b></h1>
+	<ul>
+		<li><a href="main.html">Profile</a></li>
+		<li><a href="music.html">Music</a></li>
+		<li><a href="timetable.html">Timetable</a></li>
+	    <li><a href="travel.html">Travel</a></li>
+		<li><a href="favorite.html">Favorite</a></li>
+	</ul>
+
+    <img src="img/profile.jpg" align="left" width="300" height="300">
+    
+    <div style="font-size: 30px; margin: 120px;">
+		
+		<b>이름 : </b>홍길동<br>
+        <b>생년월일 : </b>홍길동<br>
+        <b>출신지 : </b>홍길동<br>
+        <b>학력 : </b>홍길동<br>
+	</div>
+
+   
+    
+</body>
+
+</html>

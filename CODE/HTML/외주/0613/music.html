@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>CSS Navigation bar</title>
+	<style>
+		ul {
+			background-color: #FFDAB9;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+            text-align: center;
+		}
+		li {
+			display: inline-block;
+			font-size: 20px;
+			padding: 20px;
+			 }
+		li a {
+			display: block;
+			background-color: #ffac64;
+			color: #000000;
+			padding: 8px;
+			text-decoration: none;
+			text-align: center;
+			font-weight: bold;
+		}
+		li a.current {
+			background-color: #FF6347;
+			color: white;
+			text-align: center;
+		}
+		li a:hover:not(.current) {
+			background-color: #CD853F;
+			color: white;
+		}
+	</style>
+</head>
+
+<body bgcolor="#FFDAB9">
+
+	<h1 style="text-align: center;"><b>PROFILE</b></h1>
+	<ul>
+		<li><a href="main.html">Profile</a></li>
+		<li><a href="music.html">Music</a></li>
+		<li><a href="timetable.html">Timetable</a></li>
+	    <li><a href="travel.html">Travel</a></li>
+		<li><a href="favorite.html">Favorite</a></li>
+    </ul>
+    <div style="margin: 100px;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/iDjQSdN_ig8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/mH0_XpSHkZo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Mn3qh0XrLcc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/29ycT6fA-Rs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    
+</body>
+
+</html>
