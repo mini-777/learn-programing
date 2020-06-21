@@ -2,26 +2,170 @@
     <head>
         <meta charset="utf-8">
         <title>Something</title>
-        <link rel="stylesheet" href="index.css" />
+        <style>
+            
+
+            body{
+                background-color: #636e72;
+                
+            }
+
+            h1 {
+                color: #ecf0f1;
+            }
+
+            .form,
+            .greetings{
+                color: #ecf0f1;
+                display: none;
+            }
+            .showing {
+                display: block;
+                color: #ecf0f1;
+            }
+            .js-toDoList{
+                color: #ced6e0;
+            }
+            .js-weather{
+                color: #ced6e0;
+            }
+            @keyframes fadeIn {
+                0% {
+                    opacity:0;
+                }
+                100% {
+                    opacity:1;
+                }
+            }
+            .bgImage{
+                position: absolute;
+                top:0;
+                left:0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                animation: fadeIn 2s;
+            }
+        </style>
     </head>
     <body>
         <div class="js-clock">
-            <h1>00:00</h1>
+            <h1 style="font-size: 100px;margin: auto;">00:00</h1>
         </div>
+        <br><br>
+        
         <form class="js-form form">
-            <input type="text" placeholder="what is your name?">
+            <input style="width:200pt;height:60pt;font-size: 26px;" type="text" placeholder="what is your name?">
         </form>
-        <h4 class="js-greetings greetings"></h4>
-        <form class="js-toDoForm">
-            <input type="text" placeholder="Write a to do"/>
-        </form>
-        <ul class="js-toDoList">
-        </ul>
+        
+        <h4 style="font-size: 100px;margin: auto;" class="js-greetings greetings"></h4>
+
+
+        
+            <br><br>
+            <button type="button" style="width:160pt;height:60pt;font-size: 26px;" onclick="window.open('index2.html') ">현재날씨</button>
+            <button type="button" style="width:160pt;height:60pt;font-size: 26px;" onclick="window.open('index3.html') ">해야할일 리스트</button>
+            <button type="button" style="width:160pt;height:60pt;font-size: 26px;" onclick="window.open('https://news.naver.com/') ">오늘의 뉴스</button><br>
+
+            <br><br>
+
+            <iframe src="music.mp3" allow="autoplay" id="audio"></iframe>
+
+
+
         <span class="js-weather"></span>
-        <script src="clock.js"></script>
-        <script src="greeting.js"></script>
-        <script src="todo.js"></script>
-        <script src="background.js"></script>
-        <script src="weather.js"></script>
+    <script>
+                const clockContainer = document.querySelector(".js-clock");
+                const clockTitle = clockContainer.querySelector("h1");
+                function getTime() {
+                    const date = new Date();
+                    const minutes = date.getMinutes();
+                    const hours = date.getHours();
+                    const seconds = date.getSeconds();
+                    clockTitle.innerText = `${hours < 10
+                        ? `0${hours}`
+                        : hours}:${minutes < 10
+                            ? `0${minutes}`
+                            : minutes}:${seconds < 10
+                                ? `0${seconds}`
+                                : seconds}`;
+                }
+                function init() {
+                    getTime();
+                    setInterval(getTime, 1000)
+                }
+                init();
+
+                </script>
+
+                <script>
+                const form = document.querySelector(".js-form"),
+                    input = form.querySelector("input"),
+                    greeting = document.querySelector(".js-greetings"),
+                    USER_LS = "currentUser",
+                    SHOWING_CN = "showing";
+
+                function handleSubmit(event) {
+                    event.preventDefault();
+                    const currentValue = input.value;
+                    paintGreeting(currentValue);
+                    saveName(currentValue);
+                }
+                function saveName(text) {
+                    localStorage.setItem(USER_LS, text);
+                }
+                function askForName() {
+                    form
+                        .classList
+                        .add(SHOWING_CN);
+                    form.addEventListener("submit", handleSubmit);
+                }
+                function paintGreeting(text) {
+                    form
+                        .classList
+                        .remove(SHOWING_CN)
+                    greeting
+                        .classList
+                        .add(SHOWING_CN)
+                    greeting.innerText = `Hello ${text}`
+                }
+                function loadName() {
+                    const currentUser = localStorage.getItem(USER_LS);
+                    if (currentUser === null) {
+                        askForName();
+
+                    } else {
+                        paintGreeting(currentUser);
+                    }
+                }
+                function init() {
+                    loadName();
+                }
+
+                init();
+                </script>
+                <script>
+                const body = document.querySelector("body");
+                const IMG_NUMBER = 3;
+
+                function paintImage(imgNumber) {
+                    const image = new Image();
+                    image.src = `${imgNumber + 1}.jpg`;
+                    image
+                        .classList
+                        .add('bgImage');
+                    body.prepend(image);
+
+                }
+                function genRandom() {
+                    const number = Math.floor(Math.random() * IMG_NUMBER);
+                    return number;
+                }
+                function init() {
+                    const randomNumber = genRandom();
+                    paintImage(randomNumber);
+                }
+                init();
+            </script>
     </body>
 </html>

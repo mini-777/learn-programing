@@ -1,3 +1,4 @@
+package 0524;
 import java.util.*;
 import java.io.BufferedReader;
 import java.io.File;

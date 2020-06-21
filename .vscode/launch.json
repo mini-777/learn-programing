@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - FigurePanelEx",
+            "request": "launch",
+            "mainClass": "javastart.FigurePanelEx",
+            "projectName": "program_ab9c3755"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "javastart.Main",
+            "projectName": "program_ab9c3755"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - helloworld",
+            "request": "launch",
+            "mainClass": "javastart.helloworld",
+            "projectName": "program_ab9c3755"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - exam",
+            "request": "launch",
+            "mainClass": "exam",
+            "projectName": "program_ab9c3755"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "program_ab9c3755"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - NestedLoopTest2",
             "request": "launch",
             "mainClass": "NestedLoopTest2",
