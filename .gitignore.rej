@@ -1,0 +1,11 @@
+diff a/.gitignore b/.gitignore	(rejected hunks)
+@@ -9,6 +9,7 @@
+ *.orig.*
+ web-build/
+ web-report/
+-*.json
++**/expoProject
++
+ # macOS
+ .DS_Store
+\ No newline at end of file
