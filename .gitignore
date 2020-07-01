@@ -9,6 +9,7 @@ npm-debug.*
 *.orig.*
 web-build/
 web-report/
-*.json
+**/expoProject
+
 # macOS
 .DS_Store
