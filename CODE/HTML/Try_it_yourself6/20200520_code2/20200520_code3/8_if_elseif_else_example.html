@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>if example</title>
+  </head>
+  <body>
+    <p>Click the button to get a time-based greeting:</p>
+    <button onclick="myFunction()">Try it</button>
+    <p id="demo"></p>
+    <script>
+      function myFunction() {
+        var greeting;
+        var time = new Date().getHours();
+        if (time < 10) {
+          greeting = "Good morning";
+        } else if (time < 20) {
+          greeting = "Good day";
+        } else {
+          greeting = "Good evening";
+        }
+        document.getElementById("demo").innerHTML = greeting;
+      }
+
+      if (condition1){
+        //block of code to be executed if condition1 is true
+        if (condition2){
+          //block of code to be executed if condition1 and 2 are both true
+        }
+      }
+    </script>
+  </body>
+</html>

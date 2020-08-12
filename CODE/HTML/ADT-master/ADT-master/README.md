@@ -1,0 +1,8 @@
+ADT
+===
+
+In this assignment, you will be required to write an ADT that represents a playlist of audio files similar to the ones used by audio playback programs such as iTunes and Windows Media Player. Your ADT will be responsible for maintaining simple information about each audio file (namely the title, artist, and length in minutes and seconds) as well as the correct ordering of the audio files in the list. The ADT should also provide a series of operations for manipulating the playlist including adding and removing audio files, displaying the contents of the list, and finding all songs that were performed by a particular artist.
+
+1. Write a fully-documented class named SongRecord which contains information about a particular audio file. It should have member variables for the title and artist (both strings) as well as two member variables for the song's length in minutes and seconds (both ints). You should provide accessor and mutator methods for each variable as well as a default constructor. For the mutator method of the seconds variable, you should throw an exception if the new value is less than 0 or greater than 59. For the mutator method of the minutes variable, you should throw an exception if the new value is negative. Finally, you should provide a toString() method that neatly prints the information about the audio file on a single line as shown below in the sample output.
+
+2. Write a fully-documented class named Playlist that stores all SongRecord objects that belong to a particular playlist. The SongRecord objects should be stored in an array. There should be a maximum of 50 SongRecord objects allowed, a number which should be defined as a final variable. The class will be based on the following ADT specification:

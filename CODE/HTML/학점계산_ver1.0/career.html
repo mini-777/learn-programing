@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <h1>학점계산기</h1>
+  <script type="text/javascript" src="http://www.career.co.kr/js/jquery-ui.js"></script>
+  <script type="text/javascript" src="http://www4.career.co.kr/js/jquery-1.5.1.js"></script>
+  <script type="text/javascript" src="points_array.js"></script>
+  <script type="text/javascript" src="points_converter.js"></script>
+	<style>
+		.button {
+			margin: 20px;
+		}
+		.tb_btn {
+			margin: 20px;
+		}
+		fieldset{
+			
+			width: 600px;
+			height: 600px;
+		}
+		.grades {
+			float: left;
+		}
+		.tit2 {
+			margin-top: -20px;
+		}
+		.result {
+			text-align: center;
+		}
+		
+	</style>
+</head>
+
+<body bgcolor="blue">
+  <div class="main tools">
+    <div class="inner arrow" >
+
+			<div class="grades">
+				<div class="tit">
+					<h2>점수 입력하기</h2>
+				</div><!-- .tit -->
+				<fieldset>
+					<dl class="d1">
+					<dt>만점</dt>
+					<dd>
+					<span class="selectbox" style="width:100px;">
+								<select id="exam_type" onchange="fn_chg_exam_type(this.value);">
+									<option value="A" selected="selected">4.5</option>
+									<option value="B">4.5(-A 포함)</option>
+									<option value="C">4.3</option>
+								</select>
+					</span>
+						<label class="checkbox off">
+							<input class="chk" type="checkbox" id="di" name="di">
+							<span>F학점포함</span>
+						</label>
+					</dd>
+					</dl>
+					<div class="tb_area">
+						<table class="tb_subject" border="1" cellspacing="0" cellpadding="15px" style="margin: 40px; text-align: center;" bgcolor="skyblue">
+						<colgroup>
+							<col style="width:138px;">
+								<col style="width:108px;">
+								<col style="width:76px;">
+									<col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th>과목 명</th>
+										<th>점수</th>
+										<th>학점</th>
+										<th>전공</th>
+									</tr>
+								</thead>
+								<tbody>
+
+									<tr>
+										<td><input class="txt value" id="subject1" name="subject" type="text" default="과목 명" value="과목 명을 입력해주세요"></td>
+										<td>
+											<span class="selectbox">
+												<span class=""></span>
+												<select id="sel_point1" name="sel_point">
+													<option value="">선택</option>
+													<option value="A+">A+</option>
+													<option value="A">A</option>
+													<option value="B+">B+</option>
+													<option value="B">B</option>
+													<option value="C+">C+</option>
+													<option value="C">C</option>
+													<option value="D+">D+</option>
+													<option value="D">D</option>
+													<option value="F">F</option>
+												</select>
+											</span>
+										</td>
+										<td><input class="txt value" id="credit1" name="credit" type="text" default="0" value="0" onkeyup="return fn_chk_numeric_point(this);"></td>
+										<td>
+											<label class="checkbox off">
+											<input class="chk" type="checkbox" id="chk_major1" name="chk_major">
+											<span></span>
+										</label>
+										</td>
+									</tr>
+
+									<tr>
+										<td><input class="txt value" id="subject2" name="subject" type="text" default="과목 명" value="과목 명을 입력해주세요"></td>
+										<td>
+											<span class="selectbox">
+												<span class=""></span>
+												<select id="sel_point2" name="sel_point">
+													<option value="">선택</option>
+													<option value="A+">A+</option>
+													<option value="A">A</option>
+													<option value="B+">B+</option>
+													<option value="B">B</option>
+													<option value="C+">C+</option>
+													<option value="C">C</option>
+													<option value="D+">D+</option>
+													<option value="D">D</option>
+													<option value="F">F</option>
+												</select>
+											</span>
+										</td>
+										<td><input class="txt value" id="credit2" name="credit" type="text" default="0" value="0" onkeyup="return fn_chk_numeric_point(this);"></td>
+										<td>
+											<label class="checkbox off">
+											<input class="chk" type="checkbox" id="chk_major2" name="chk_major">
+											<span></span>
+										</label>
+										</td>
+									</tr>
+
+									<tr>
+										<td><input class="txt value" id="subject3" name="subject" type="text" default="과목 명" value="과목 명을 입력해주세요"></td>
+										<td>
+											<span class="selectbox">
+												<span class=""></span>
+												<select id="sel_point3" name="sel_point">
+													<option value="">선택</option>
+													<option value="A+">A+</option>
+													<option value="A">A</option>
+													<option value="B+">B+</option>
+													<option value="B">B</option>
+													<option value="C+">C+</option>
+													<option value="C">C</option>
+													<option value="D+">D+</option>
+													<option value="D">D</option>
+													<option value="F">F</option>
+												</select>
+											</span>
+										</td>
+										<td><input class="txt value" id="credit3" name="credit" type="text" default="0" value="0" onkeyup="return fn_chk_numeric_point(this);"></td>
+										<td>
+											<label class="checkbox off">
+											<input class="chk" type="checkbox" id="chk_major3" name="chk_major">
+											<span></span>
+										</label>
+										</td>
+									</tr>
+
+									<tr>
+										<td><input class="txt value" id="subject4" name="subject" type="text" default="과목 명" value="과목 명을 입력해주세요"></td>
+										<td>
+											<span class="selectbox">
+												<span class=""></span>
+												<select id="sel_point4" name="sel_point">
+													<option value="">선택</option>
+													<option value="A+">A+</option>
+													<option value="A">A</option>
+													<option value="B+">B+</option>
+													<option value="B">B</option>
+													<option value="C+">C+</option>
+													<option value="C">C</option>
+													<option value="D+">D+</option>
+													<option value="D">D</option>
+													<option value="F">F</option>
+												</select>
+											</span>
+										</td>
+										<td><input class="txt value" id="credit4" name="credit" type="text" default="0" value="0" onkeyup="return fn_chk_numeric_point(this);"></td>
+										<td>
+											<label class="checkbox off">
+											<input class="chk" type="checkbox" id="chk_major4" name="chk_major">
+											<span></span>
+										</label>
+										</td>
+									</tr>
+
+								</tbody>
+								</table>
+
+								<div class="tb_btn" style="text-align: center;">
+									<button class="tb_add">과목추가</button>
+									<button class="tb_del">과목 삭제</button>
+								</div>
+							</div>
+              				<script>
+							var i = 4;
+							$('.tb_add').click(function() {
+								if ($('.tb_subject > tbody > tr').length < 10) {
+									i = i+1;
+									//행 추가
+									if ($("#exam_type").val() == "A")
+									{
+										var addtr =
+										'<tr>'+
+										'   <td><input class="txt value" id="subject'+i+'" name="subject" type="text" value="과목 명" default="과목 명"></td>'+
+										'   <td>'+
+										'       <span class="selectbox">'+
+										'			<span class="">선택</span>'+
+										'			<select id="sel_point'+i+'" name="sel_point">'+
+										'				<option value="">선택</option>'+
+										'				<option value="A+">A+</option>'+
+										'				<option value="A">A</option>'+
+										'				<option value="B+">B+</option>'+
+										'				<option value="B">B</option>'+
+										'				<option value="C+">C+</option>'+
+										'				<option value="C">C</option>'+
+										'				<option value="D+">D+</option>'+
+										'				<option value="D">D</option>'+
+										'				<option value="F">F</option>'+
+										'			</select>'+
+										'		</span>'+
+										'   </td>'+
+										'	<td>'+
+										'		<input class="txt value" id="credit'+i+'"name="credit" type="text" default="0" value="0">'+
+										'	</td>'+
+										'	<td>'+
+										'		<label class="checkbox">'+
+										'		<input class="chk" type="checkbox" id="chk_major'+i+'" name="chk_major">'+
+										'	</td>'+
+										'</tr>';
+										$('.tb_subject').append(addtr);
+									}
+									else
+									{
+										var addtr =
+										'<tr>'+
+										'   <td><input class="txt value" id="subject'+i+'" name="subject" type="text" value="과목 명" default="과목 명"></td>'+
+										'   <td>'+
+										'       <span class="selectbox">'+
+										'			<span class="">선택</span>'+
+										'			<select id="sel_point'+i+'" name="sel_point">'+
+										'				<option value="">선택</option>'+
+										'				<option value="A+">A+</option>'+
+										'				<option value="A">A</option>'+
+										'				<option value="A-">A-</option>'+
+										'				<option value="B+">B+</option>'+
+										'				<option value="B">B</option>'+
+										'				<option value="B-">B-</option>'+
+										'				<option value="C+">C+</option>'+
+										'				<option value="C">C</option>'+
+										'				<option value="C-">C-</option>'+
+										'				<option value="D+">D+</option>'+
+										'				<option value="D">D</option>'+
+										'				<option value="D-">D-</option>'+
+										'				<option value="F">F</option>'+
+										'			</select>'+
+										'		</span>'+
+										'   </td>'+
+										'	<td>'+
+										'		<input class="txt value" id="credit'+i+'"name="credit" type="text" default="0" value="0">'+
+										'	</td>'+
+										'	<td>'+
+										'		<label class="checkbox">'+
+										'		<input class="chk" type="checkbox" id="chk_major'+i+'" name="chk_major">'+
+										'	</td>'+
+										'</tr>';
+										$('.tb_subject').append(addtr);
+									}
+
+									//select on표시
+									var tbSel = $('.tb_subject .selectbox select');
+									var tbVal = $('.tb_subject .txt');
+									tbSel.focus(function(){
+									  $(this).prev('span').addClass('on');
+									});
+									tbSel.blur(function(){
+									  $(this).prev('span').removeClass('on');
+									});
+									tbVal.focus(function(){
+										$(this).val('');
+									});
+									tbVal.blur(function(){
+										var _default = $(this).attr('default');
+										if(this.value == '' || this.value == _default) {
+											this.value = _default;
+										}
+									});
+
+									//checkbox on표시
+									$('.tb_subject .checkbox input').toggle(function() {
+										$(this).parents('label').addClass('on'); },
+										function() { $(this).parents('label').removeClass('on');
+									});
+
+									selectboxFnc();//셀렉트박스
+									checkboxFnc();//체크박스
+								}
+
+							});
+
+							//tr 삭제
+							$('.tb_del').click(function() {
+								if ($('.tb_subject > tbody > tr').length > 4) {
+									i = i-1;
+									$('.tb_subject > tbody > tr:last').remove();
+								}
+							});
+							</script>
+
+
+							<div class="button" style="text-align: center;">
+								<button href="javascript:void(0);" onclick="fn_calculate();">계산하기</button>
+								<button href="javascript:void(0);" onclick="fn_reset();">초기화</button>
+							</div><!-- .button -->
+						</fieldset>
+					</div><!-- .input -->
+					<div class="result" >
+						<div class="tit2" style="text-align: left;">
+							<h2>총 학점(평점)</h2><br>
+						</div><!-- .tit -->
+						<fieldset style="font-size: 30px;">
+							<dl class="sum">
+								<dt>
+									총평점
+								</dt>
+								<dd>
+									<input class="txt" type="text" id="total_avg" default="0" value="0.0" disabled="disabled">
+									<strong class="txt">점</strong>
+								</dd>
+							</dl>
+
+							<dl class="score">
+								<dt>
+									전공 평점
+								</dt>
+								<dd>
+									<input class="txt" type="text" id="total_major_avg" default="0" value="0.0" disabled="disabled">
+									<strong class="txt">점</strong>
+								</dd>
+							</dl>
+
+							<dl class="score">
+								<dt>
+									총 이수학점
+								</dt>
+								<dd>
+									<input class="txt" type="text" id="total_point" default="0" value="0" disabled="disabled">
+									<strong class="txt">점</strong>
+								</dd>
+							</dl>
+
+							<dl class="score">
+								<dt>
+									전공 이수학점
+								</dt>
+								<dd>
+									<input class="txt" type="text" id="total_major_point" default="0" value="0" disabled="disabled">
+									<strong class="txt">점</strong>
+								</dd>
+							</dl>
+						</fieldset>
+					</div><!-- .result -->
+
+				</div><!-- .inner -->
+
+
+				</div><!-- .inner -->
+
+			</div>
+</body>
+</html>

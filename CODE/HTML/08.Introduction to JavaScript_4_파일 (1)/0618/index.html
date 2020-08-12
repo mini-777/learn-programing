@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="/assets/bootstrap-4.5.0/css/bootstrap.min.css">
+<title>유기견 보호 정보</title>
+<style>
+.card { /* bootstrap .card 재정의 */
+    width:21.5rem; /* root em */
+    margin-bottom:.5rem;
+}    
+.card-img-top:hover {
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" name="keyword" placeholder="입력하세요 Ex)20200622">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button">날짜 조회</button>
+        </div>
+    </div>
+    <hr>
+    <div id="pocket"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="/assets/bootstrap-4.5.0/js/bootstrap.min.js"></script>
+
+<script>
+$('.btn').click(function(){
+    //$.ajax({}).done(function(data){});
+    // input[name] 입력을 했는지 확인
+    var keyword = $('input[name="keyword"]').val();
+    if(keyword.length < 1){
+        alert('조회할 날짜를 입력하세요.');
+        return false;
+    }
+   
+    $.get('http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/abandonmentPublic ', {
+        bgnde: keyword,
+        endde: 20200730,
+        pageNo: 1,
+        numOfRows: 10,
+        ServiceKey:'TWgd7HiPlLFBTlXnKEALNwbbgwBwhhWG4pg3PlN6FBs6GxRaE mDDjdCN/CPLHRdHF4nVMGqB6NumIP3FzM1HQ==',
+
+
+    /*$.get('Public.xml').done(function(data){*/
+    }).done(function(data){
+        var rs = $(data).find('item'); 
+        var rs = []; 
+
+        console.log(rs);
+
+        $.each(rs, function(index,value){
+            var careNm = $(value).find('careNm').text();
+            var age = $(value).find('age').text(); 
+            var kindCd = $(value).find('kindCd').text(); 
+            var addr = $(value).find('careAddr').text();
+            var state = $(value).find('processState').text();
+            var mark = $(value).find('specialMark').text();
+            var tel = $(value).find('careTel').text();
+            var img = $(value).find('popfile').text();
+
+            img = (img) ? img : 'https://dummyimage.com/300x200/ddd/000';
+
+           // console.log('이미지 ' + img);
+
+            rs.push('<div class="col"><div class="card"><img src="'+img+'" class="card-img-top" alt="'+kindCd+'"><div class="card-body"><h5 class="card-title">'+careNm+'</h5><p class="card-text">'+addr+'</p></div></div></div>');
+        });
+
+        $('#pocket').html('<div class="row">'+rs.join('')+'</div>');
+    });
+});
+
+
+</script>
+</body>
+</html>

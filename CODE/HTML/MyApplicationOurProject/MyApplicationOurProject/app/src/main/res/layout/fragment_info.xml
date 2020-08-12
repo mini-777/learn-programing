@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InfoFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="[교외] 네이버 D2SF 공모전 공고"
+            android:id="@+id/info1"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="[교외] 2020 페임랩 코리아 경진대회"
+            android:id="@+id/info2"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="[교외] 2020 한경 앱 아이디어 챌린지(일정변경: 4.23-> 5.28)"
+            android:id="@+id/info3"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="[교외] 제 5회 우수기술 사업화 테크톤 경진대회 홍보"
+            android:id="@+id/info4"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="[교외] [ICT콤플렉스] 서울특별시와 함께하는 제2회 ICT콕 해커톤 개최"
+            android:id="@+id/info5"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="[교외] [ICT CoC] 2nd ICT콕 해커톤 개최"
+            android:id="@+id/info6"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="[교외] 개방형클라우드플랫폼 파스-타 기반 서비스 개발 및 아이디어 공모전 안내"
+            android:id="@+id/info7"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="게시판 부착물 경진대회 안내 링크"
+            android:id="@+id/info8"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="[교외] 2019년도 도서관 북 트레일러 공모전 개최 안내(기간연장)"
+            android:id="@+id/info9"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="[교외] [NAVER] 대학(원)생 기술창업 공모전 (서류접수 ~ 11/18일(월))"
+            android:id="@+id/info10"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="[교외] CAMPUS HACKDAY 2019 WINTER 네이버 개발자와 함께하는 해커톤"
+            android:id="@+id/info11"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="[교외] 지혁혁신주니어 프로그램 홍보"
+            android:id="@+id/info12"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="[교외] Energy x Security Hackathon 공고"
+            android:id="@+id/info13"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="[교외] 2019 BEEBOY로봇 게임 창작 경진대회 개최 홍보 협조 요청"
+            android:id="@+id/info14"/>
+
+    </LinearLayout>
+
+
+</FrameLayout>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제4</title>
+</head>
+<body>
+    <img id="image" src="flower.jpeg" height="50" width="50"> <br>
+    <span id="myspan">높이 : 50픽셀 * 폭: 50픽셀</span><br><br>
+    <input type="button" value="이미지 크기 X 2" onclick="imageSizeX2()">
+    <script>
+        function imageSizeX2() {
+            var img = document.getElementById('image');
+            w = img.width;
+            h = img.height;
+            img.width = w * 2;
+            img.height = h * 2;
+
+            document.getElementById("myspan").innerHTML("높이 : "+img.height+"픽셀 * 폭: "+img.width+"픽셀");
+            document.getElementById("myspan").style.backgroundColor="yellow";
+            document.getElementById("myspan").style.fontWeight="bold";
+            document.getElementById("myspan").style.fontSize="15pt";
+            
+} 
+    </script>
+</body>
+</html>

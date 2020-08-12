@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fahrenheit to Celsius</title>
+    <script src="js/4_JS_Function_Why.js"></script>
+  </head>
+  <body>
+    <h2>JavaScript Functions</h2>
+    <p>This example calls a function to convert from Fahrenheit to Celsius:</p>
+    <p id="demo"></p>
+
+    <script>
+      var Fahrenheit = prompt("Input Fahrenheit (number)");
+      var Celsius = toCelsius(Fahrenheit);
+      document.getElementById("demo").innerHTML =
+      "Input variable: " + Fahrenheit + " Fahrenheit, and " +
+      "Function variable: " + Celsius + " Celsius";
+    </script>
+  </body>
+</html>

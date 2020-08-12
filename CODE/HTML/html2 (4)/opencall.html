@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>opencall</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <style>
+        * {
+            transition: all 0.3s ease;
+            opacity: 1;
+        }
+        body {
+            background-image: url('images/opcb.png')
+        }
+
+        div#opct {
+            position: absolute;
+            width: 611px;
+            height: 490px;
+            left: 1309px;
+            top: 0px;
+        }
+
+        div#opcbt {
+            position: absolute;
+            width: 136px;
+            height: 136px;
+            left: 1706px;
+            top: 781px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe, .video-container object, .video-container embed {
+            position: absolute;
+            width: 1056px;
+            height: 706px;
+            left: 432px;
+            top: 187px;
+        }
+
+        div#citydrop {
+            position: absolute;
+            width: 200px;
+            height: 237px;
+            left: 1730px;
+            top: 520px;
+        }
+
+        ul {
+            list-style: none; /*리스트 앞의 점 빼기*/
+            text-align: left;
+        }
+
+        li a {
+            display: block; /*a태그는 본래 인라인 요소임,블럭요소로 설정을 바꿈*/
+            text-decoration: none; /*a태그로 인해 생기는 밑줄 빼기*/
+            color: #675A15;
+            font-family: "SM3신신명조 03";
+            font-style: normal;
+            font-weight: 300;
+            font-size: 24px;
+            padding: .02em .5em; /*위아래 0.02, 좌우 0.5여백 주기*/
+            text-transform: uppercase;
+            margin: 0em; /*내비게이션 메뉴간의 간격 벌리기*/
+        }
+    </style>
+</head>
+<body>
+    <div id="opcd" style="position: absolute;">
+        <div style="position: relative;">
+            <img src="images/opcd.png" />
+        </div>
+    </div>
+    <div id="opcp" style="position: absolute;">
+        <div style="position: relative;">
+            <img src="images/opcp.png" />
+        </div>
+    </div>
+    <div id="opct" style="position: absolute;">
+        <div style="position: relative;">
+            <img src="images/opct.png" />
+        </div>
+    </div>
+    <div id="opcbt" style="position: absolute;">
+        <div style="position: relative;">
+            <img id="cityclick" src="images/opcbt.png" />
+        </div>
+    </div>
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/zgkbL5mD-uE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div id="citydrop">
+        <div class="dropbottom">
+            <div class="dropmid">
+                <ul>
+                    <li><a href="home.html">처음으로</a></li>
+					 <li><a href="story.html">줄거</a></li>
+                    <li><a href="actor.html">연기자</a></li>
+                    <li><a href="music.html">가락모음</a></li>
+                    <li><a href="plan.html">기획</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        $("#cityclick").on("mouseover", () => $("#citydrop").slideUp('slow'));
+        $("#cityclick").on("mouseleave", () => $("#citydrop").slideDown('slow'));
+    </script>
+</body>
+</html>

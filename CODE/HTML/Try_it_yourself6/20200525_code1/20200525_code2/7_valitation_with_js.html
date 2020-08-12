@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Validation with JavaScript</title>
+    <link rel="stylesheet" href="css/7_valitation_with_js.css">
+    <script src="js/7_valitation_with_js.js"></script>
+  </head>
+  <body>
+    <form>
+      <label>Preferred email address:
+      		<input type="email" id="email_addr" name="email1" value = "me@me.com" required>
+      </label>
+      <label>Repeat email address:
+      		<input type="email" id="email_repeat" name="email2" required onchange="return check()">
+      </label>
+      <input type = 'submit' value = "Confirm Emails!">
+    </form>
+  </body>
+</html>

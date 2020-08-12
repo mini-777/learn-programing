@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Finding the Avg</title>
+  </head>
+  <body>
+    <h3>Finding an average with for loop</h3>
+    <p id="avg"></p>
+    <script>
+      var grades = [80, 87, 94, 82, 62, 98, 81, 81, 74, 91];
+      var sum = 0;
+      for (i = 0; i < grades.length; i++){
+        sum += grades[i];
+      }
+      document.getElementById("avg").innerHTML = sum/grades.length;
+
+
+    </script>
+  </body>
+</html>

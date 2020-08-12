@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - test",
+            "request": "launch",
+            "mainClass": "test.test",
+            "projectName": "program_ab9c3755"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - FigurePanelEx",
             "request": "launch",
             "mainClass": "javastart.FigurePanelEx",

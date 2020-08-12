@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>nested if example</title>
+  </head>
+  <body>
+    <h1>Nested if example</h1>
+    <p id = "demo"></p>
+    <script>
+      var name =
+      prompt("What is your name?", "Young-Duk Seo")
+      if (name.length != 0){
+        if (name == "Young-Duk Seo")
+          document.getElementById("demo").innerHTML = "What a handsome guy!"
+        else
+          document.getElementById("demo").innerHTML ="Hello " +  name;
+      }
+      else
+        document.getElementById("demo").innerHTML ="Feeling shy?";
+    </script>
+  </body>
+</html>

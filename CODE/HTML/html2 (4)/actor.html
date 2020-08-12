@@ -1,0 +1,373 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>actor</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
+<script type="text/javascript" src="./actor.js" ></script>
+<style>
+	* {
+		transition: all 0.3s ease;
+		opacity: 1;
+	}
+	body {position: relative;
+width: 1920px;
+height: 3268px;
+background-image: url('images/actb.png')}
+	div#acd {position: absolute;
+width: 120px;
+height: 3268px;
+left: 1389px;
+top: 0px;}
+	
+	div#sh{position: absolute;
+width: 251px;
+height: 164px;
+left: 434px;
+top: 141px;}
+	
+	div#dh{position: absolute;
+width: 252px;
+height: 165px;
+left: 434px;
+top: 1061px;
+}
+	
+	div#yb {position: absolute;
+width: 250px;
+height: 164px;
+left: 434px;
+top: 1982px;}
+	
+	div#shtext {position: absolute;
+width: 146px;
+height: 465px;
+left: 1191px;
+top: 305px;}
+	
+	div#dhtext{position: absolute;
+width: 187px;
+height: 551px;
+left: 1170px;
+top: 1226px;}
+	
+	div#ybtext{position: absolute;
+width: 187px;
+height: 567px;
+left: 1150px;
+top: 2146px;}
+	
+#songWrap {
+	position: absolute;
+	width: 100%;
+	left: 434px;
+	top: 382px;
+	display: flex;
+	flex-direction: row;
+}
+div#song1{
+	margin-right: 16px;
+	width: 146px;
+	height: 198px;
+	background-size:cover;
+}
+
+div#song2{
+	margin-right: 16px;
+	width: 146px;
+	height: 198px;
+	background-size:cover;
+}
+
+div#song3{
+	margin-right: 16px;
+	width: 144px;
+	height: 198px;
+	background-size:cover;
+}
+	
+	div#songf1{position: absolute;
+width: 495px;
+height: 153px;
+left: 434px;
+top: 693px;}
+	
+	div#songf2{position: absolute;
+width: 495px;
+height: 153px;
+left: 434px;
+top: 693px;}
+	
+	div#songf3{position: absolute;
+width: 495px;
+height: 153px;
+left: 434px;
+top: 693px;}
+	
+#dongWrap {
+	position: absolute;
+	width: 100%;
+	left: 434px;
+	top: 1303px;
+	display: flex;
+	flex-direction: row;
+}
+div#dong1{
+	margin-right: 16px;
+	width: 146px;
+	height: 198px;
+	background-size:cover;
+}
+
+div#dong2{
+	margin-right: 16px;
+	width: 146px;
+	height: 198px;
+	background-size:cover;
+}
+
+div#dong3{
+	margin-right: 16px;
+	width: 144px;
+	height: 198px;
+	background-size:cover;
+}
+	div#dongf1{position: absolute;
+width: 443px;
+height: 120px;
+left: 449px;
+top: 1681px;}
+	
+	div#dongf2{position: absolute;
+width: 443px;
+height: 120px;
+left: 449px;
+top: 1681px;}
+	
+	div#dongf3{position: absolute;
+width: 443px;
+height: 120px;
+left: 449px;
+top: 1681px;}
+	
+#yooWrap {
+	position: absolute;
+	width: 100%;
+	left: 434px;
+	top: 2223px;
+	display: flex;
+	flex-direction: row;
+}
+div#yoo1{
+	margin-right: 16px;
+	width: 146px;
+	height: 198px;
+	background-size:cover;
+}
+
+div#yoo2{
+	margin-right: 16px;
+	width: 146px;
+	height: 198px;
+	background-size:cover;
+}
+	div#yoof1{position: absolute;
+width: 422px;
+height: 122px;
+left: 434px;
+top: 2581px;}
+	
+	div#yoof2{position: absolute;
+width: 422px;
+height: 122px;
+left: 434px;
+top: 2581px;}
+	
+	div#actbt{position: absolute;
+width: 140px;
+height: 139px;
+left: 1664px;
+top: 2884px;}
+	
+	div#list{position: absolute;
+width: 160px;
+height: 237px;
+left: 1754px;
+top: 2641px;
+}
+	
+	ul {
+ list-style: none;/*리스트 앞의 점 빼기*/
+ text-align: left;
+			}
+		ul li a {
+			
+	display:block;/*a태그는 본래 인라인 요소임,블럭요소로 설정을 바꿈*/
+    text-decoration:none;/*a태그로 인해 생기는 밑줄 빼기*/
+    color:#171948;
+	font-family: "SM3신신명조 03";
+	font-style: normal;
+	font-weight:300;
+	font-size:24px;
+    padding: .02em .5em;/*위아래 0.02, 좌우 0.5여백 주기*/
+	text-transform: uppercase;
+			margin:0em;/*내비게이션 메뉴간의 간격 벌리기*/
+		}
+	
+	
+</style>
+</head>
+<body>
+	<!--댕기 !-->
+	<div id="acd" style="position: absolute;">
+
+        <div style="position: relative;">
+			<img src="images/acd.png"></img>
+	</div>
+	</div>
+	<!--송화제목!-->
+	<div id="sh" style="position: absolute;">
+
+        <div style="position: relative;">
+			<img src="images/송화t.png"></img>
+	</div>
+	</div>
+<!--동호 제목!-->
+	<div id="dh" style="position: absolute;">
+
+        <div style="position: relative;">
+			<img src="images/동호t.png"></img>
+	</div>
+	</div>
+<!--유봉제목!-->
+	<div id="yb" style="position: absolute;">
+
+        <div style="position: relative;">
+			
+			<img src="images/유봉t.png"></img>
+	</div>
+	</div>
+	<!--송화프로필!-->
+	<div id="shtext" style="position: absolute;">
+
+        <div style="position: relative;">
+			<img src="images/송화프로필.png"></img>
+	</div>
+	</div>
+<!--동호 프로필!-->
+	<div id="dhtext" style="position: absolute;">
+
+        <div style="position: relative;">
+			<img src="images/동호프로필.png"></img>
+	</div>
+	</div>
+<!--유봉 프로필!-->
+	<div id="ybtext" style="position: absolute;">
+
+        <div style="position: relative;">
+			<img src="images/유봉 프로필.png"></img>
+	</div>
+	</div>
+
+<!--송화 사진!-->
+<div id="songWrap" style="position: absolute;">
+	<div id="song1" style="position: relative; background-image: url('images/송화1.png');">
+	</div>
+	<div id="song2" style="position: relative; background-image: url('images/송화2.png');">
+	</div>
+	<div id="song3" style="position: relative; background-image: url('images/송화3.png');">
+	</div>
+</div>
+<!--송화 프로필!-->
+<div id="songf1" style="position: absolute;">
+
+        <div style="position: relative;">
+			<img src="images/이소연프로필.png"></img>
+	</div>
+	</div>
+<div id="songf2" style="position: absolute;">
+
+        <div style="position: relative;">
+			<img src="images/이자람프로필.png"></img>
+	</div>
+	</div>
+<div id="songf3" style="position: absolute;">
+
+        <div style="position: relative;">
+			<img src="images/차지연프로필.png"></img>
+	</div>
+	</div>
+
+<!--동호 사진!-->
+<div id="dongWrap" style="position: absolute;">
+	<div id="dong1" style="position: relative; background-image: url('images/동호1.png');">
+	</div>
+	<div id="dong2" style="position: relative; background-image: url('images/동호2.png');">
+	</div>
+	<div id="dong3" style="position: relative; background-image: url('images/동호3.png');">
+	</div>
+</div>
+
+<div id="dongf1" style="position: absolute;">
+
+        <div style="position: relative;">
+			<img src="images/강필석프로필.png"></img>
+	</div>
+	</div>
+
+<div id="dongf2" style="position: absolute;">
+
+        <div style="position: relative;">
+			<img src="images/김재범프로필.png"></img>
+	</div>
+	</div>
+
+<div id="dongf3" style="position: absolute;">
+
+        <div style="position: relative;">
+			<img src="images/박영수 프로필.png"></img>
+	</div>
+	</div>
+
+<!--유봉 사진!-->
+<div id="yooWrap" style="position: absolute;">
+	<div id="yoo1" style="position: relative; background-image: url('images/유봉1.png');">
+	</div>
+	<div id="yoo2" style="position: relative; background-image: url('images/유봉2.png');">
+	</div>
+</div>
+<div id="yoof1" style="position: absolute;">
+
+        <div style="position: relative;">
+			<img src="images/이정렬프로필.png"></img>
+	</div>
+	</div>
+
+<div id="yoof2" style="position: absolute;">
+
+        <div style="position: relative;">
+			<img src="images/서범석프로필.png"></img>
+	</div>
+	</div>
+
+<div id="actbt" style="position: absolute;">
+
+        <div style="position: relative;">
+			<img src="images/actbt.png"></img>
+	</div>
+	</div>
+
+<div id="list" style="position: absolute;">
+<nav>
+			<ul>
+				<li><a href="home.html">처음으로</a></li>
+				<li><a href="story.html">줄거리</a></li>
+				<li><a href="opencall.html">여는가락</a></li>
+				<li><a href="music.html">가락모음</a></li>
+				<li><a href="plan.html">기획</a></li>
+			</ul>
+		</nav>
+</div>
+
+</body>
+</html>
