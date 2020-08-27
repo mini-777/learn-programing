@@ -1,7 +1,7 @@
 import turtle as t
 t.shape('turtle')
 t.pu()
-t.goto(0,-100)
+t.goto(0, -100)
 t.pd()
 for i in range(4):
     t.circle(100, 180)
@@ -14,4 +14,4 @@ t.begin_fill()
 t.circle(100)
 t.end_fill()
 t.ht()
-stop=input()
+stop = input()
