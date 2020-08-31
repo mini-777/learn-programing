@@ -1,4 +1,8 @@
-n=3
-m=3
-array =[[0]*m for _ in range(n)]
-print(array)
+n = int(input())
+arr = list()
+for _ in range(n):
+    arr.append(int(input()))
+
+arr.sort(reverse=True)
+for i in range(n):
+    print(arr[i], end=' ')
